@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, QueryList, ContentChildren } from '@angular/core';
+import { Component, OnInit, QueryList, ContentChildren } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 import { ComunidadComponent } from '../comunidad/comunidad.component';
 
@@ -8,8 +9,6 @@ import { ComunidadComponent } from '../comunidad/comunidad.component';
   styleUrls: ['./provincia.component.scss']
 })
 export class ProvinciaComponent implements OnInit {
-
-  @Input() public nombre: string;
 
   @ContentChildren(ComunidadComponent) public comunidades!: QueryList<ComunidadComponent>;
 
@@ -22,17 +21,8 @@ export class ProvinciaComponent implements OnInit {
   [12, 'Pontevedra', 4], [13, 'Madrid', 1], [14, 'Murcia', 1], [15, 'Navarra', 1], [16, 'Alava', 1], [16, 'Vizcaya', 2], [16, 'Gipuzkoa', 3],
   [17, 'La Rioja', 1], [18, 'Ceuta', 1], [19, 'Melilla', 1]];
 
-  //Permite hacer algo cuando se da valor a una propiedad:
-  @Input() public set nombre2(nombre: string) {
-    this.nombre = nombre;
-  }
-  constructor() {
-    this.nombre = "";
-  }
-
   ngOnInit() {
-    console.log(this.provincias[0][0]);
-
+    console.log(this.comunidades)
   }
 
 }
