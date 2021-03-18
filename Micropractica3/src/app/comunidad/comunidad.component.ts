@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ComunidadComponent implements OnInit {
 
-  value: number = 0;
-  selected: number = 0;
+  selectedCom: number = 0;
+  selectedProv: number = 0;
 
   comunidades = [['Andalucia', 1], ['Aragon', 2], ['Asturias', 3], ['Islas Baleares', 4], ['Islas Canarias', 5], ['Cantabria', 6],
   ['Castilla y Leon', 7], ['Castilla-La Mancha', 8], ['Cataluña', 9], ['Valencia', 10], ['Extremadura', 11], ['Galicia', 12],
@@ -26,16 +26,6 @@ export class ComunidadComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeSelect() {
-    for (let i = 0; i < this.comunidades.length; i++) {
-      if (this.comunidades[i][1] == this.selected) {
-        this.value = this.selected;
-        console.log(this.comunidades[i][1]);
-      }
-    }
-  }
-
   ngAfterInit() {
-    console.log(this.comunidades[0][0]);
   }
 }
