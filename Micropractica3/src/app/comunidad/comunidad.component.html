@@ -15,7 +15,7 @@
     </select>
 </div>
 <div>
-    <p>Comunidad: </p>{{selectedCom}}
-    <p>Provincia: </p>{{selectedProv}}
-    <button>Get propiedades del CustomElement</button>
+    <p>Comunidad: </p><p [hidden] = "hide">{{selectedCom}}</p>
+    <p>Provincia: </p><p [hidden] = "hide">{{selectedProv}}</p>
+    <button (click)= "hide = false">Get propiedades del CustomElement</button>
 </div>
