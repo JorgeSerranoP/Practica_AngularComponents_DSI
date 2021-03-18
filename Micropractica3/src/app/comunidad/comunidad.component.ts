@@ -9,7 +9,6 @@ export class ComunidadComponent implements OnInit {
 
   selectedCom: number = 0;
   selectedProv: number = 0;
-  hide: boolean = true;
 
   comunidades = [['Andalucia', 1], ['Aragon', 2], ['Asturias', 3], ['Islas Baleares', 4], ['Islas Canarias', 5], ['Cantabria', 6],
   ['Castilla y Leon', 7], ['Castilla-La Mancha', 8], ['Cataluña', 9], ['Valencia', 10], ['Extremadura', 11], ['Galicia', 12],

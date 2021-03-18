@@ -9,6 +9,7 @@ export class PropiedadesComponent implements OnInit {
 
     @Input() selectedCom: string = "";
     @Input() selectedProv: string = "";
+    hide: boolean = true;
 
     ngOnInit() {
     }

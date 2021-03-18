@@ -1,21 +1,15 @@
 <div>
-    <p class="etiq">Comunidad:</p>
-    <select class="profile__name" [(ngModel)]="selectedCom">
+    <p class="etiq">Comunidad: </p>
+    <select class="select" [(ngModel)]="selectedCom">
         <option value="0" selected>SELECCIONE UNA COMUNIDAD AUTONOMA</option>
         <option *ngFor='let comunidad of comunidades; let i=index' [value]=comunidad[1]>{{comunidad[0]}}</option>
     </select>
-</div>
-<div>
-    <p class="etiq">Provincias:</p>
-    <select class="profile__name" [(ngModel)]="selectedProv">
+    <p class="etiq">Provincias: </p>
+    <select class="select" [(ngModel)]="selectedProv">
         <option value="0" selected>SELECCIONE UNA PROVINCIA</option>
         <ng-container *ngFor='let provincia of provincias'>
             <option *ngIf='provincia[0] == selectedCom' [value]=provincia[2]>{{provincia[1]}}</option>
         </ng-container>
     </select>
 </div>
-<div>
-    <p>Comunidad: </p><p [hidden] = "hide">{{selectedCom}}</p>
-    <p>Provincia: </p><p [hidden] = "hide">{{selectedProv}}</p>
-    <button (click)= "hide = false">Get propiedades del CustomElement</button>
-</div>
+<app-propiedades selectedCom="{{selectedCom}}" selectedProv="{{selectedProv}}"></app-propiedades>
